@@ -1,0 +1,779 @@
+{
+  "main": {
+    "name": "Arcaea (Main Pack)",
+    "type": "free",
+    "songs": [
+      "Sayonara Hatsukoi",
+      "Fairytale",
+      "Vexaria",
+      "Rise",
+      "Lucifer",
+      "Snow White",
+      "Shades of Light in a Transcendent Realm",
+      "Babaroque",
+      "Lost Civilization",
+      "GOODTEK (Arcaea Edit)",
+      "qualia -ideaesthesia-",
+      "Dement ~after legend~",
+      "Dandelion",
+      "Infinity Heaven",
+      "Anökumene",
+      "Brand new world",
+      "Chronostasis",
+      "Kanagawa Cyber Culvert",
+      "Clotho and the stargazer",
+      "Ignotus",
+      "Harutopia ~Utopia of Spring~",
+      "Rabbit In The Black Room",
+      "One Last Drive",
+      "Dreamin' Attraction!!",
+      "Red and Blue",
+      "Reinvent",
+      "Syro",
+      "Blaster",
+      "Cybernecia Catharsis",
+      "inkar-usi",
+      "Suomi",
+      "Bookmaker (2D Version)",
+      "Illegal Paradise",
+      "Nhelv",
+      "LunarOrbit -believe in the Espebranch road-",
+      "Purgatorium",
+      "Rugie",
+      "Grimheart",
+      "ReviX",
+      "VECTOЯ",
+      "SUPERNOVA",
+      "Diode",
+      "FREEF4LL",
+      "Monochrome Princess",
+      "Senkyou",
+      "world.execute(me);",
+      "Oblivia",
+      "Ävril -Flicka i krans-",
+      "Sakura Fubuki",
+      "NULCTRL",
+      "DDD",
+      "Dancin' on a Cat's Paw",
+      "san skia",
+      "Altair (feat. *spiLa*)",
+      "Redraw the Colorless World",
+      "Trap Crow",
+      "Dialnote",
+      "Remind the Souls (Short Version)",
+      "The Formula",
+      "Jingle",
+      "Hidden Rainbows of Epicurus"
+    ]
+  },
+  "memory_archive": {
+    "name": "Memory Archive",
+    "type": "memory_archive",
+    "songs": [
+      "DataErr0r",
+      "CROSS†SOUL",
+      "Your voice so... feat. Such",
+      "Impure Bird",
+      "Auxesia",
+      "Modelista",
+      "Surrender",
+      "Yosakura Fubuki",
+      "Metallic Punisher",
+      "carmine:scythe",
+      "γuarδina",
+      "Be There",
+      "Call My Name feat. Yukacco",
+      "dropdead",
+      "Fallen",
+      "Alexandrite",
+      "Astral tale",
+      "Phantasia",
+      "Empire of Winter",
+      "Libertas",
+      "Dot to Dot feat. shully",
+      "Dreadnought",
+      "Mirzam",
+      "Heavenly caress",
+      "Filament",
+      "Avant Raze",
+      "BATTLE NO.1",
+      "La'qryma of the Wasteland",
+      "Einherjar Joker",
+      "IZANA",
+      "SAIKYO STRONGER",
+      "amygdata",
+      "Altale",
+      "Feels So Right feat. Renko",
+      "Scarlet Cage",
+      "Teriqma",
+      "MAHOROBA",
+      "BADTEK",
+      "Malicious Mischances",
+      "BUCHiGiRE Berserker",
+      "Galaxy Friends",
+      "Xeraphinite",
+      "Xanatos",
+      "AttraqtiA",
+      "GIMME DA BLOOD",
+      "Can I Friend You on Bassbook? Lol",
+      "THE ULTIMACY",
+      "REKKA RESONANCE",
+      "Sheriruth (Laur Remix)",
+      "Evening in Scarlet",
+      "goldenslaughterer",
+      "lastendconductor",
+      "Redolent Shape",
+      "Summer Fireworks of Love",
+      "init()",
+      "INTERNET OVERDOSE",
+      "Macrocosmic Modulation",
+      "Kissing Lucifer",
+      "NEO WINGS",
+      "Aurgelmir",
+      "Head BONK aches",
+      "PICO-Pico-Translation!",
+      "µ",
+      "PUPA",
+      "Free Myself",
+      "cocoro*cosmetic",
+      "Capella",
+      "NULL APOPHENIA",
+      "Crimson Throne",
+      "Manic Jeer",
+      "Hiiro Gekka, Kyoushou no Zetsu (nayuta 2017 ver.)",
+      "PRIMITIVE LIGHTS",
+      "The Survivor (Game Edit)",
+      "New York Back Raise",
+      "Galactic Love",
+      "Lost in the Abyss",
+      "To the Milky Way",
+      "INTERNET YAMERO",
+      "SACRIFICE feat. ayame",
+      "To the Furthest Dream",
+      "B.B.K.K.B.K.K.",
+      "Wish Upon a Snow",
+      "Kanbu de Tomatte Sugu Tokeru",
+      "LIVHT MY WΔY",
+      "Luna Rossa",
+      "Innocence",
+      "IONOSTREAM",
+      "Masquerade Legion",
+      "Qovat",
+      "KYOREN ROMANCE",
+      "MIRINAE",
+      "ultradiaxon-N3",
+      "Distorted Fate",
+      "Floating World",
+      "Chromafill",
+      "Désive",
+      "Twilight Concerto",
+      "Beautiful Dreamer",
+      "Back to Basics",
+      "STARGATE EXTREME",
+      "HYPER VISION",
+      "shrink",
+      "Rain of Conflict in a Radiant Abyss",
+      "Gensou no Satellite",
+      "Crimson Quartz",
+      "Third Sun",
+      "Spirit of the Dauntless",
+      "Dies irae",
+      "MEGALOVANIA (Camellia Remix)",
+      "Placebo♥Battler",
+      "Shinchoku Doudesuka?",
+      "Tic! Tac! Toe!",
+      "Don't Die"
+    ]
+  },
+  "world_extend_3": {
+    "name": "World Extend 3: Illusions",
+    "type": "extend",
+    "songs": [
+      "HELLOHELL",
+      "〇、",
+      "MORNINGLOOM",
+      "Awaken In Ruins",
+      "Lethal Voltage",
+      "Leave All Behind",
+      "Old School Salvage",
+      "Distortion Human",
+      "epitaxy",
+      "Hailstone",
+      "FURETE-MITAI",
+      "Prayer",
+      "astral.exe",
+      "Black Mirror on the Wall",
+      "TRPN",
+      "τ (tau)"
+    ]
+  },
+  "extend_archive_1": {
+    "name": "Extend Archive 1: Visions",
+    "type": "extend",
+    "songs": [
+      "Vivid Theory",
+      "1F",
+      "Gekka (Short Version)",
+      "Give Me a Nightmare",
+      "Black Lotus",
+      "Faint Light (Arcaea Edit)",
+      "CROSS†OVER",
+      "Lapis",
+      "Purple Verse",
+      "Glow",
+      "enchanted love",
+      "Bamboo",
+      "Life is PIANO",
+      "Vandalism",
+      "Turbocharger",
+      "False Embellishment",
+      "HIVEMIND",
+      "blue comet",
+      "ENERGY SYNERGY MATRIX",
+      "G e n g a o z o"
+    ]
+  },
+  "extend_archive_2": {
+    "name": "Extend Archive 2: Chronicles",
+    "type": "extend",
+    "songs": [
+      "Tsuki ni Murakumo, Hana ni Kaze",
+      "MANTIS (Arcaea Ultra-Bloodrush VIP)",
+      "World Fragments III(radio edit)",
+      "Astra walkthrough",
+      "Chronicle",
+      "Let's Rock (Arcaea mix)",
+      "Lost Emotion feat. nomico",
+      "GIMMICK",
+      "Lawless Point",
+      "Hybris (The one who shattered)",
+      "Ultimate taste",
+      "RGB",
+      "Kanjou no Matenrou ～Arr.Demetori",
+      "Dynitikós",
+      "Amekagura",
+      "FANTA5Y",
+      "Alone & Lorn",
+      "felys final remix",
+      "On And On!! feat. Jenga",
+      "Aleph-0"
+    ]
+  },
+  "eternal_core": {
+    "name": "Eternal Core",
+    "type": "story",
+    "songs": [
+      "cry of viyella",
+      "I've heard it said",
+      "memoryfactory.lzh",
+      "Relentless",
+      "Lumia",
+      "Essence of Twilight",
+      "PRAGMATISM",
+      "Sheriruth",
+      "Solitary Dream"
+    ]
+  },
+  "vicious_labyrinth": {
+    "name": "Vicious Labyrinth",
+    "type": "story",
+    "songs": [
+      "Iconoclast",
+      "SOUNDWiTCH",
+      "trappola bewitching",
+      "conflict",
+      "Axium Crisis",
+      "Grievous Lady"
+    ]
+  },
+  "luminous_sky": {
+    "name": "Luminous Sky",
+    "type": "story",
+    "songs": [
+      "Maze No.9",
+      "The Message",
+      "Sulfur",
+      "Halcyon",
+      "Ether Strike",
+      "Fracture Ray"
+    ]
+  },
+  "adverse_prelude": {
+    "name": "Adverse Prelude",
+    "type": "story",
+    "songs": [
+      "Particle Arts",
+      "Saint or Sinner",
+      "Vindication",
+      "Heavensdoor",
+      "Ringed Genesis",
+      "BLRINK"
+    ]
+  },
+  "black_fate": {
+    "name": "Black Fate",
+    "type": "story",
+    "songs": [
+      "Equilibrium",
+      "Antagonism",
+      "Lost Desire",
+      "Dantalion",
+      "#1f1e33",
+      "Tempestissimo",
+      "Arcahv"
+    ]
+  },
+  "final_verdict": {
+    "name": "Final Verdict",
+    "type": "story",
+    "songs": [
+      "Defection",
+      "Infinite Strife,",
+      "World Ender",
+      "Pentiment",
+      "Arcana Eden",
+      "Testify"
+    ]
+  },
+  "silent_answer": {
+    "name": "Silent Answer",
+    "type": "story",
+    "songs": [
+      "Loveless Dress",
+      "Last",
+      "Callima Karma"
+    ]
+  },
+  "lasting_eden": {
+    "name": "Lasting Eden",
+    "type": "story",
+    "songs": [
+      "WAIT FOR DAWN",
+      "Raven's Pride",
+      "Rise of the World",
+      "UNKNOWN LEVELS",
+      "Abstruse Dilemma"
+    ]
+  },
+  "lasting_eden_2": {
+    "name": "Lasting Eden Chapter 2 (Severed Eden)",
+    "type": "story",
+    "songs": [
+      "Primeval Texture",
+      "Technicolour",
+      "Logos",
+      "Ego Eimi",
+      "Arghena"
+    ]
+  },
+  "shifting_veil": {
+    "name": "Shifting Veil",
+    "type": "story",
+    "songs": [
+      "Transient Space",
+      "Nameless Passion",
+      "TeraVolt"
+    ]
+  },
+  "absolute_nihil": {
+    "name": "Absolute Nihil",
+    "type": "story",
+    "songs": [
+      "In Vain",
+      "Hypnotizer",
+      "Ashen 6oundary",
+      "Judgement",
+      "ALTER EGO"
+    ]
+  },
+  "lucent_historia": {
+    "name": "Lucent Historia",
+    "type": "story",
+    "songs": [
+      "Swan Song",
+      "Renegade",
+      "Rays of Remnant",
+      "Breach of Faith",
+      "Lament Rain"
+    ]
+  },
+  "crimson_solace": {
+    "name": "Crimson Solace",
+    "type": "story",
+    "songs": [
+      "Paradise",
+      "Flashback",
+      "Flyburg and Endroll",
+      "Party Vinyl",
+      "Nirv lucE",
+      "GLORY：ROAD"
+    ]
+  },
+  "ambivalent_vision": {
+    "name": "Ambivalent Vision",
+    "type": "story",
+    "songs": [
+      "Blossoms",
+      "Romance Wars",
+      "Moonheart",
+      "Genesis",
+      "Lethaeus",
+      "corps-sans-organes"
+    ]
+  },
+  "binary_enfold": {
+    "name": "Binary Enfold",
+    "type": "story",
+    "songs": [
+      "next to you",
+      "Silent Rush",
+      "Strongholds",
+      "Memory Forest",
+      "Singularity"
+    ]
+  },
+  "shared_time": {
+    "name": "Shared Time",
+    "type": "story",
+    "songs": [
+      "Cosmica",
+      "Ascent",
+      "Live Fast Die Young"
+    ]
+  },
+  "absolute_reason": {
+    "name": "Absolute Reason",
+    "type": "story",
+    "songs": [
+      "Antithese",
+      "Black Territory",
+      "Corruption",
+      "Vicious Heroism",
+      "Cyaegha"
+    ]
+  },
+  "sunset_radiance": {
+    "name": "Sunset Radiance",
+    "type": "story",
+    "songs": [
+      "Chelsea",
+      "AI[UE]OON",
+      "A Wandering Melody of Love",
+      "Tie me down gently",
+      "Valhalla:0",
+      "Hotarubi no Yuki"
+    ]
+  },
+  "ephemeral_page": {
+    "name": "Ephemeral Page",
+    "type": "story",
+    "songs": [
+      "Alice à la mode",
+      "Eccentric Tale",
+      "Alice's Suitcase",
+      "Jump",
+      "Felis"
+    ]
+  },
+  "the_journey_onwards": {
+    "name": "The Journey Onwards",
+    "type": "story",
+    "songs": [
+      "Beside You",
+      "Heart Jackin'",
+      "To: Alice Liddell"
+    ]
+  },
+  "esoteric_order": {
+    "name": "Esoteric Order",
+    "type": "story",
+    "songs": [
+      "Paper Witch",
+      "Crystal Gravity",
+      "Far Away Light",
+      "Löschen",
+      "Aegleseeker",
+      "Seclusion"
+    ]
+  },
+  "pale_tapestry": {
+    "name": "Pale Tapestry",
+    "type": "story",
+    "songs": [
+      "Coastal Highway",
+      "ΟΔΥΣΣΕΙΑ",
+      "Overwhelm"
+    ]
+  },
+  "light_of_salvation": {
+    "name": "Light of Salvation",
+    "type": "story",
+    "songs": [
+      "Small Cloud Sugar Candy",
+      "AlterAle",
+      "Divine Light of Myriad"
+    ]
+  },
+  "divided_heart": {
+    "name": "Divided Heart",
+    "type": "story",
+    "songs": [
+      "First Snow",
+      "Blue Rose",
+      "Blocked Library",
+      "nέo κósmo",
+      "Lightning Screw"
+    ]
+  },
+  "dynamix_collab": {
+    "name": "Dynamix Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Moonlight of Sand Castle",
+      "REconstruction",
+      "Evoltex (poppi'n mix)",
+      "Oracle",
+      "αterlβus"
+    ]
+  },
+  "lanota_collab": {
+    "name": "Lanota Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Dream goes on",
+      "Journey",
+      "Specta",
+      "Quon",
+      "cyanine"
+    ]
+  },
+  "lanota_collab_2": {
+    "name": "Lanota Collaboration Chapter 2",
+    "type": "collaboration",
+    "songs": [
+      "Prism",
+      "Protoflicker",
+      "Stasis"
+    ]
+  },
+  "tone_sphere_collab": {
+    "name": "Tone Sphere Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Hikari",
+      "Hall of Mirrors",
+      "STAGER (ALL STAGE CLEAR)",
+      "Linear Accelerator",
+      "Tiferet"
+    ]
+  },
+  "groove_coaster_collab": {
+    "name": "Groove Coaster Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "MERLIN",
+      "DX Choseinou Full Metal Shojo",
+      "OMAKENO Stroke",
+      "Scarlet Lance",
+      "ouroboros -twin stroke of the end-",
+      "Got hive of Ra"
+    ]
+  },
+  "groove_coaster_collab_2": {
+    "name": "Groove Coaster Collaboration Chapter 2",
+    "type": "collaboration",
+    "songs": [
+      "Sign of \"10.5km\"",
+      "10pt8ion",
+      "Black MInD"
+    ]
+  },
+  "chunithm_collab": {
+    "name": "CHUNITHM Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Garakuta Doll Play",
+      "Ikazuchi",
+      "World Vanquisher"
+    ]
+  },
+  "chunithm_collab_2": {
+    "name": "CHUNITHM Collaboration Chapter 2",
+    "type": "collaboration",
+    "songs": [
+      "Climax",
+      "Last Celebration",
+      "Misdeed -la bonté de Dieu et l'origine du mal-"
+    ]
+  },
+  "chunithm_collab_3": {
+    "name": "CHUNITHM Collaboration Chapter 3",
+    "type": "collaboration",
+    "songs": [
+      "Cosmo Pop Funclub",
+      "IMPACT",
+      "Genesis",
+      "Trrricksters!!",
+      "Spider's Thread"
+    ]
+  },
+  "chunithm_collab_4": {
+    "name": "CHUNITHM Collaboration Chapter 4",
+    "type": "collaboration",
+    "songs": [
+      "BlazinG AIR",
+      "8-EM",
+      "Ignition",
+      "DA'AT -The First Seeker of Souls-",
+      "Aether Crest: Astral"
+    ]
+  },
+  "ongeki_collab": {
+    "name": "O.N.G.E.K.I. Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Lazy Addictions",
+      "Dazzle hop",
+      "Viyella's Tears",
+      "ω4"
+    ]
+  },
+  "ongeki_collab_2": {
+    "name": "O.N.G.E.K.I. Collaboration Chapter 2",
+    "type": "collaboration",
+    "songs": [
+      "Heart",
+      "Ai Drew",
+      "FLUFFY FLASH",
+      "Good bye, Merry-Go-Round.",
+      "LAMIA"
+    ]
+  },
+  "ongeki_collab_3": {
+    "name": "O.N.G.E.K.I. Collaboration Chapter 3",
+    "type": "collaboration",
+    "songs": [
+      "LiftOff",
+      "SUPER AMBULANCE",
+      "Don't Fight The Music",
+      "And Revive The Melody"
+    ]
+  },
+  "maimai_collab": {
+    "name": "maimai Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "April showers",
+      "7thSense",
+      "Oshama Scramble!",
+      "AMAZING MIGHTYYYY!!!!"
+    ]
+  },
+  "maimai_collab_2": {
+    "name": "maimai Collaboration Chapter 2",
+    "type": "collaboration",
+    "songs": [
+      "CYCLES",
+      "MAXRAGE",
+      "[X]",
+      "TEmPTaTiON"
+    ]
+  },
+  "maimai_collab_3": {
+    "name": "maimai Collaboration Chapter 3",
+    "type": "collaboration",
+    "songs": [
+      "BREaK! BREaK! BREaK!",
+      "Straight into the lights",
+      "ViRTUS",
+      "yomibito_shirazu"
+    ]
+  },
+  "wacca_collab": {
+    "name": "WACCA Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Quon",
+      "with U",
+      "Let you DIVE! (nitro rmx)",
+      "Mazy Metroplex",
+      "GENOCIDER"
+    ]
+  },
+  "wacca_collab_2": {
+    "name": "WACCA Collaboration Chapter 2",
+    "type": "collaboration",
+    "songs": [
+      "Stratoliner",
+      "Ouvertüre",
+      "XTREME",
+      "eden",
+      "Meta-Mysteria"
+    ]
+  },
+  "muse_dash_collab": {
+    "name": "Muse Dash Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Lights of Muse",
+      "Final Step!",
+      "Haze of Autumn",
+      "Medusa"
+    ]
+  },
+  "cytus_ii_collab": {
+    "name": "Cytus II Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Bullet Waiting for Me (James Landino remix)",
+      "Devillic Sphere",
+      "Lucid Traveler",
+      "CHAOS",
+      "Used to be"
+    ]
+  },
+  "cytus_ii_collab_2": {
+    "name": "Cytus II Collaboration Chapter 2",
+    "type": "collaboration",
+    "songs": [
+      "syūten",
+      "DRG",
+      "99 Glooms",
+      "͟͝͞Ⅱ́̕",
+      "Magnolia"
+    ]
+  },
+  "rotaeno_collab": {
+    "name": "Rotaeno Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Waltz for Lorelei",
+      "Dual Doom Deathmatch",
+      "Inverted World",
+      "MVURBD",
+      "Vulcānus"
+    ]
+  },
+  "undertale_collab": {
+    "name": "UNDERTALE Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Heartache",
+      "Death By Glamour",
+      "Your Best Nightmare",
+      "Last Goodbye",
+      "MEGALOVANIA"
+    ]
+  },
+  "djmax_collab": {
+    "name": "DJMAX Collaboration",
+    "type": "collaboration",
+    "songs": [
+      "Ladymade Star",
+      "U.A.D",
+      "End of The Moonlight",
+      "OBLIVION",
+      "Nightmare"
+    ]
+  }
+}
