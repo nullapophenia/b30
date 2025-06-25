@@ -58,9 +58,6 @@ const Results = ({ b30Data }) => {
   const exportB30AsImage = async () => {
     const element = document.getElementById('b30-export')
     if (!element) return
-    // Set fixed width for export to prevent stretching
-    element.style.width = '1200px'
-    element.style.maxWidth = 'none'
     // Copy the body's background style to the export area
     const bodyStyle = window.getComputedStyle(document.body)
     element.style.background = bodyStyle.background
@@ -74,14 +71,12 @@ const Results = ({ b30Data }) => {
     link.download = 'b30.png'
     link.href = canvas.toDataURL('image/png')
     link.click()
-    // Optionally, reset the export area's background and width after export
+    // Optionally, reset the export area's background after export
     element.style.background = ''
     element.style.backgroundImage = ''
     element.style.backgroundSize = ''
     element.style.backgroundPosition = ''
     element.style.backgroundAttachment = ''
-    element.style.width = ''
-    element.style.maxWidth = ''
   }
 
   const getGrade = (score) => {

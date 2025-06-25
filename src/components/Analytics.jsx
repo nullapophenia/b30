@@ -283,46 +283,6 @@ const Analytics = ({ userScores, allSongs, b30Data, packData }) => {
           </table>
         </div>
       </div>
-
-      <div className="analytics-card glassy-purple">
-        <h3>Score Tier & Grade Distribution</h3>
-        <p>
-          A detailed breakdown of how many of your recorded scores fall into Arcaea's achievement tiers (PM, EX+, EX, AA, A, B, C, D), with breakdowns by difficulty and grade. Visualizations will include a stacked bar chart and a pie/donut chart.
-        </p>
-        <div className="placeholder">[Chart and data coming soon]</div>
-      </div>
-
-      <div className="analytics-card glassy-purple">
-        <h3>Potential Gain Opportunity (Targeted Improvement)</h3>
-        <p>
-          Identifies specific songs where a small score improvement could yield a significant gain in Play Rating, or where current performance is notably below potential. Visualizations will include a prioritized list and a bubble/scatter plot.
-        </p>
-        <div className="placeholder">[Chart and data coming soon]</div>
-      </div>
-
-      <div className="analytics-card glassy-purple">
-        <h3>Song Pack Performance Comparison</h3>
-        <p>
-          Analyzes your performance tendencies across different song packs, revealing preferences, stylistic weaknesses, or hidden strengths. Visualizations will include grouped bar charts and EX+/PM count charts.
-        </p>
-        <div className="placeholder">[Chart and data coming soon]</div>
-      </div>
-
-      <div className="analytics-card glassy-purple">
-        <h3>Play Rating vs. Chart Constant Scatter Plot (with Benchmarks)</h3>
-        <p>
-          Plots every song played, showing its true difficulty versus your actual performance, with key benchmarks. Visualizations will include a scatter plot with reference lines and color-coding by difficulty or grade.
-        </p>
-        <div className="placeholder">[Chart and data coming soon]</div>
-      </div>
-
-      <div className="analytics-card glassy-purple">
-        <h3>Performance Outliers (Exceptional Plays & Struggle Charts)</h3>
-        <p>
-          Highlights songs where your performance is unusually high or low compared to your average for that chart constant or difficulty. Visualizations will include lists and highlighted points on the scatter plot.
-        </p>
-        <div className="placeholder">[Chart and data coming soon]</div>
-      </div>
     </div>
   )
 }
