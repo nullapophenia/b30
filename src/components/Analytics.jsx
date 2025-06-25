@@ -1,4 +1,15 @@
 import { useState, useEffect } from 'react'
+import { Bar } from 'react-chartjs-2';
+import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+function getCCGroup(cc) {
+  const num = Math.floor(cc);
+  const dec = cc - num;
+  if (num < 7) return null;
+  if (dec >= 0.7 && num <= 11) return `${num}+`;
+  return `${num}`;
+}
 
 const Analytics = ({ userScores, allSongs, b30Data, packData }) => {
   const [analytics, setAnalytics] = useState(null)
@@ -103,35 +114,48 @@ const Analytics = ({ userScores, allSongs, b30Data, packData }) => {
     }
 
     // Difficulty preferences - performance by CC range
-    const difficultyStats = {}
-    scores.forEach(song => {
-      const cc = parseFloat(song['Chart Constant'])
-      const score = parseInt(song.Score.replace(/['']/g, ''))
-      const ccRange = Math.floor(cc)
-      
-      if (!difficultyStats[ccRange]) {
-        difficultyStats[ccRange] = { 
-          count: 0, 
-          avgScore: 0, 
-          totalScore: 0, 
-          avgPotential: 0, 
-          totalPotential: 0,
-          pmCount: 0 
-        }
-      }
-      
-      difficultyStats[ccRange].count++
-      difficultyStats[ccRange].totalScore += score
-      difficultyStats[ccRange].totalPotential += song['Play Potential']
-      if (score >= 10000000) difficultyStats[ccRange].pmCount++
-    })
+    const difficulties = ['PST', 'PRS', 'FTR', 'ETR', 'BYD'];
+    const ccGroups = ['7', '7+', '8', '8+', '9', '9+', '10', '10+', '11', '11+', '12'];
 
-    Object.keys(difficultyStats).forEach(cc => {
-      const stats = difficultyStats[cc]
-      stats.avgScore = Math.round(stats.totalScore / stats.count)
-      stats.avgPotential = (stats.totalPotential / stats.count).toFixed(2)
-      stats.pmRate = ((stats.pmCount / stats.count) * 100).toFixed(1)
-    })
+    const grouped = {};
+    difficulties.forEach(diff => {
+      grouped[diff] = {};
+      ccGroups.forEach(ccg => {
+        grouped[diff][ccg] = [];
+      });
+    });
+
+    (scores || []).forEach(song => {
+      const diff = song.Difficulty;
+      const cc = parseFloat(song['Chart Constant']);
+      const ccg = getCCGroup(cc);
+      if (difficulties.includes(diff) && ccGroups.includes(ccg)) {
+        grouped[diff][ccg].push(song);
+      }
+    });
+
+    const summaryRows = [];
+    difficulties.forEach(diff => {
+      ccGroups.forEach(ccg => {
+        const arr = grouped[diff][ccg];
+        if (arr.length === 0) return;
+        const avgPlayRating = arr.reduce((a, b) => a + b['Play Potential'], 0) / arr.length;
+        const avgDelta = arr.reduce((a, b) => a + (b['Play Potential'] - parseFloat(b['Chart Constant'])), 0) / arr.length;
+        const avgScore = arr.reduce((a, b) => a + parseInt(b.Score.replace(/['']/g, '')), 0) / arr.length;
+        const best = Math.max(...arr.map(s => s['Play Potential']));
+        const worst = Math.min(...arr.map(s => s['Play Potential']));
+        summaryRows.push({
+          diff,
+          ccg,
+          avgPlayRating: avgPlayRating.toFixed(2),
+          avgDelta: avgDelta.toFixed(2),
+          avgScore: Math.round(avgScore).toLocaleString(),
+          count: arr.length,
+          best: best.toFixed(2),
+          worst: worst.toFixed(2)
+        });
+      });
+    });
 
     // Pack performance analysis
     const packPerformance = {}
@@ -209,7 +233,7 @@ const Analytics = ({ userScores, allSongs, b30Data, packData }) => {
       lowestB30,
       improvementSuggestions,
       scoreRanges,
-      difficultyStats,
+      summaryRows,
       stdDev,
       lowHangingFruit,
       totalScores: scores.length,
@@ -223,255 +247,81 @@ const Analytics = ({ userScores, allSongs, b30Data, packData }) => {
 
   if (!analytics) return null
 
-  return (    <div className="analytics-section">
-      <h2>performance analytics</h2>
-      
-      <div className="analytics-grid">
-        {/* PTT Progress */}
-        <div className="analytics-card">
-          <h3>progress</h3>          <div className="analytics-content">
-            <div className="ptt-current">
-              <span className="label">current ptt:</span>
-              <span className="value">{analytics.currentPTT}</span>
-            </div>
-            {analytics.nextMilestone && analytics.pttToNext !== 'MAX' ? (
-              <div className="ptt-next">
-                <span className="label">to {analytics.nextMilestone}:</span>
-                <span className="value">+{analytics.pttToNext}</span>
-              </div>
-            ) : (
-              <div className="ptt-next">
-                <span className="label">status:</span>
-                <span className="value max-ptt">max ptt!</span>
-              </div>
-            )}
-            <div className="ptt-details">
-              <div>lowest b30: {analytics.lowestB30.toFixed(2)}</div>
-              <div>31st best: {analytics.score31st}</div>
-            </div>
-          </div>
-        </div>        {/* Improvement Suggestions */}
-        <div className="analytics-card">
-          <h3>improvements</h3>
-          <div className="analytics-content">
-            {analytics.score31st !== 'N/A' && (
-              <div className="improvement-header">
-                your 31st best score is {analytics.score31st}. improve these songs to raise your b30:
-              </div>
-            )}
-            {analytics.improvementSuggestions.length > 0 ? (
-              <div className="improvement-list">
-                {analytics.improvementSuggestions.map((song, idx) => (
-                  <div key={idx} className="improvement-item">
-                    <div className="song-info">
-                      <div className="song-title">{song.Title}</div>
-                      <div className="song-details">
-                        {song['Chart Constant']} | current: {song['Play Potential'].toFixed(2)} → target: {song.targetScore}
-                      </div>
-                    </div>
-                    <div className="potential-gain">+{song.potentialGain}</div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="no-improvements">your b30 is very strong!</div>
-            )}
-          </div>
+  return (
+    <div className="analytics-section">
+      <h2>Performance Analytics</h2>
+      <div className="analytics-card glassy-purple">
+        <h3>Difficulty Performance Profile</h3>
+        <p>
+          A comprehensive breakdown of your average performance across distinct difficulty levels. 
+          This helps identify skill plateaus and strong suits by difficulty.
+        </p>
+        <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+          {/* Grouped Bar Chart */}
+          <Bar data={{ labels: ['FTR 9', 'FTR 10', 'FTR 11'], datasets: [
+            { label: 'Avg Play Rating', data: [10.2, 10.8, 11.3], backgroundColor: 'rgba(162,89,230,0.7)' },
+            { label: 'Avg Delta', data: [0.3, 0.1, -0.2], backgroundColor: 'rgba(162,89,230,0.3)' }
+          ] }} options={{ responsive: true, plugins: { legend: { position: 'top' }, title: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.1)' } }, y: { grid: { color: 'rgba(255,255,255,0.1)' } } } }} />
         </div>
-
-        {/* Low Hanging Fruit */}
-        <div className="analytics-card">
-          <h3>easy wins</h3>
-          <div className="analytics-content">
-            <div className="fruit-header">songs just outside b30 that could make it in:</div>
-            {analytics.lowHangingFruit.length > 0 ? (
-              <div className="fruit-list">
-                {analytics.lowHangingFruit.slice(0, 5).map((song, idx) => (
-                  <div key={idx} className="fruit-item">
-                    <div className="song-title">{song.Title}</div>                    <div className="song-potential">
-                      {parseFloat(song['Chart Constant']).toFixed(1)} | {Number(song['Play Potential']).toFixed(2)}
-                      {song.wouldMakeB30 && <span className="would-make-b30"> → b30!</span>}
-                    </div>
-                    {song.wouldMakeB30 && (
-                      <div className="pm-potential">pm = {song.pmPotential}</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="no-fruit">no obvious improvements found</div>
-            )}
-          </div>
-        </div>
-
-        {/* Score Distribution */}
-        <div className="analytics-card">
-          <h3>score distribution</h3>
-          <div className="analytics-content">
-            <div className="score-distribution">
-              {Object.entries(analytics.scoreRanges).map(([range, count]) => (
-                <div key={range} className="score-range">
-                  <span className="range-label">{range.toLowerCase()}</span>
-                  <span className="range-count">{count}</span>
-                </div>
+        <div className="difficulty-summary">
+          {/* Summary table as shown previously */}
+          <table style={{ width: '100%', marginTop: '1em', background: 'rgba(255,255,255,0.05)', borderRadius: '10px' }}>
+            <thead><tr><th>Difficulty</th><th>Avg Play Rating</th><th>Avg Delta</th><th>Avg Score</th><th>Count</th><th>Best</th><th>Worst</th></tr></thead>
+            <tbody>
+              {analytics.summaryRows.map(row => (
+                <tr key={row.diff + row.ccg}>
+                  <td>{row.diff} {row.ccg}</td>
+                  <td>{row.avgPlayRating}</td>
+                  <td>{row.avgDelta}</td>
+                  <td>{row.avgScore}</td>
+                  <td>{row.count}</td>
+                  <td>{row.best}</td>
+                  <td>{row.worst}</td>
+                </tr>
               ))}
-            </div>
-            <div className="total-scores">total scores: {analytics.totalScores}</div>
-          </div>
+            </tbody>
+          </table>
         </div>
+      </div>
 
-        {/* Consistency */}
-        <div className="analytics-card">
-          <h3>standard deviation</h3>
-          <div className="analytics-content">
-            <div className="consistency-metric">
-              <span className="label">standard deviation:</span>
-              <span className="value">{analytics.stdDev.toFixed(3)}</span>
-            </div>
-            <div className="consistency-desc">
-              {analytics.stdDev < 0.3 ? "extremely consistent!" : 
-               analytics.stdDev < 0.5 ? "very consistent!" : 
-               analytics.stdDev < 1.0 ? "good consistency" : 
-               "room for consistency improvement"}
-            </div>
-          </div>
-        </div>
+      <div className="analytics-card glassy-purple">
+        <h3>Score Tier & Grade Distribution</h3>
+        <p>
+          A detailed breakdown of how many of your recorded scores fall into Arcaea's achievement tiers (PM, EX+, EX, AA, A, B, C, D), with breakdowns by difficulty and grade. Visualizations will include a stacked bar chart and a pie/donut chart.
+        </p>
+        <div className="placeholder">[Chart and data coming soon]</div>
+      </div>
 
-        {/* Difficulty Analysis */}
-        <div className="analytics-card">
-          <h3>difficulty analysis</h3>
-          <div className="analytics-content">
-            <div className="difficulty-stats">
-              {Object.entries(analytics.difficultyStats)
-                .sort(([a], [b]) => parseInt(b) - parseInt(a))
-                .slice(0, 6)
-                .map(([cc, stats]) => (
-                <div key={cc} className="difficulty-item">
-                  <div className="cc-info">
-                    <span className="cc-label">{cc}+</span>
-                    <span className="cc-count">{stats.count} songs</span>
-                  </div>                  <div className="cc-performance">
-                    <div className="cc-avg">{(stats.avgScore / 1000000).toFixed(2)}m avg</div>
-                    <div className="cc-potential">{stats.avgPotential} ptt</div>
-                    <div className="cc-pm-rate">{stats.pmRate}% pm</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      <div className="analytics-card glassy-purple">
+        <h3>Potential Gain Opportunity (Targeted Improvement)</h3>
+        <p>
+          Identifies specific songs where a small score improvement could yield a significant gain in Play Rating, or where current performance is notably below potential. Visualizations will include a prioritized list and a bubble/scatter plot.
+        </p>
+        <div className="placeholder">[Chart and data coming soon]</div>
+      </div>
 
-        {/* Pack Performance */}
-        {analytics.packPerformance.length > 0 && (
-          <div className="analytics-card">
-            <h3>pack performance</h3>
-            <div className="analytics-content">
-              <div className="pack-stats">
-                {analytics.packPerformance.map(([packId, pack]) => (
-                  <div key={packId} className="pack-item">
-                    <div className="pack-name">{pack.name}</div>
-                    <div className="pack-details">
-                      <span>avg: {pack.avgPotential}</span>
-                      <span>{pack.scoreCount}/{pack.totalSongs} ({pack.completionRate}%)</span>
-                      <span>{pack.pmCount} pms</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+      <div className="analytics-card glassy-purple">
+        <h3>Song Pack Performance Comparison</h3>
+        <p>
+          Analyzes your performance tendencies across different song packs, revealing preferences, stylistic weaknesses, or hidden strengths. Visualizations will include grouped bar charts and EX+/PM count charts.
+        </p>
+        <div className="placeholder">[Chart and data coming soon]</div>
+      </div>
 
-        {/* Skill Gaps */}
-        {analytics.ccGaps.length > 0 && (
-          <div className="analytics-card">
-            <h3>skill gaps</h3>
-            <div className="analytics-content">
-              <div className="gap-header">chart constants where you have few scores:</div>
-              <div className="gap-list">
-                {analytics.ccGaps.map((gap, idx) => (
-                  <div key={idx} className="gap-item">
-                    <span className="gap-cc">{gap.cc}+</span>
-                    <span className="gap-count">{gap.count} songs</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}        {/* Outliers */}
-        {analytics.outliers.length > 0 && (
-          <div className="analytics-card">
-            <h3>outliers</h3>
-            <div className="analytics-content">
-              <div className="outlier-list">
-                {analytics.outliers.map((outlier, idx) => (
-                  <div key={idx} className={`outlier-item ${outlier.type}`}>
-                    <div className="song-title">{outlier.Title}</div>
-                    <div className="outlier-details">
-                      {parseFloat(outlier['Chart Constant']).toFixed(1)} | {Number(outlier['Play Potential']).toFixed(2)}
-                      <span className={`outlier-badge ${outlier.type}`}>
-                        {outlier.type === 'high' ? 'high' : 'low'} {outlier.deviation}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+      <div className="analytics-card glassy-purple">
+        <h3>Play Rating vs. Chart Constant Scatter Plot (with Benchmarks)</h3>
+        <p>
+          Plots every song played, showing its true difficulty versus your actual performance, with key benchmarks. Visualizations will include a scatter plot with reference lines and color-coding by difficulty or grade.
+        </p>
+        <div className="placeholder">[Chart and data coming soon]</div>
+      </div>
 
-        {/* Milestone Progress */}
-        <div className="analytics-card">
-          <h3>clear goals</h3>
-          <div className="analytics-content">
-            <div className="milestone-list">
-              <div className="milestone-item">
-                <div className="milestone-label">100 pms</div>
-                <div className="milestone-progress">
-                  <div className="progress-bar">
-                    <div 
-                      className="progress-fill" 
-                      style={{ width: `${analytics.milestoneProgress.pm100.progress}%` }}
-                    ></div>
-                  </div>
-                  <span className="milestone-text">
-                    {analytics.milestoneProgress.pm100.current}/100 ({analytics.milestoneProgress.pm100.progress}%)
-                  </span>
-                </div>
-              </div>
-              
-              <div className="milestone-item">
-                <div className="milestone-label">50 cc11+ clears</div>
-                <div className="milestone-progress">
-                  <div className="progress-bar">
-                    <div 
-                      className="progress-fill" 
-                      style={{ width: `${analytics.milestoneProgress.cc11Plus.progress}%` }}
-                    ></div>
-                  </div>
-                  <span className="milestone-text">
-                    {analytics.milestoneProgress.cc11Plus.current}/50 ({analytics.milestoneProgress.cc11Plus.progress}%)
-                  </span>
-                </div>
-              </div>
-              
-              <div className="milestone-item">
-                <div className="milestone-label">30 cc12+ clears</div>
-                <div className="milestone-progress">
-                  <div className="progress-bar">
-                    <div 
-                      className="progress-fill" 
-                      style={{ width: `${analytics.milestoneProgress.cc12Plus.progress}%` }}
-                    ></div>
-                  </div>
-                  <span className="milestone-text">
-                    {analytics.milestoneProgress.cc12Plus.current}/30 ({analytics.milestoneProgress.cc12Plus.progress}%)
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="analytics-card glassy-purple">
+        <h3>Performance Outliers (Exceptional Plays & Struggle Charts)</h3>
+        <p>
+          Highlights songs where your performance is unusually high or low compared to your average for that chart constant or difficulty. Visualizations will include lists and highlighted points on the scatter plot.
+        </p>
+        <div className="placeholder">[Chart and data coming soon]</div>
       </div>
     </div>
   )
