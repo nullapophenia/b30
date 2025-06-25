@@ -87,7 +87,7 @@ function App() {  const [allSongs, setAllSongs] = useState([])
   const loadInitialData = async () => {
     try {
       // Load songs data
-      const response = await fetch('/b30/scores.csv')
+      const response = await fetch('/scores.csv')
       if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.statusText}`)
       }
@@ -116,7 +116,7 @@ function App() {  const [allSongs, setAllSongs] = useState([])
       
       // Load pack data
       try {
-        const packResponse = await fetch('/b30/song_packs.json')
+        const packResponse = await fetch('/song_packs.json')
         if (packResponse.ok) {
           const packData = await packResponse.json()
           setPackData(packData)
