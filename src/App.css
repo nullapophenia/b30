@@ -684,7 +684,7 @@ header {
 .song-jacket {
   width: 70px;
   height: 70px;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-right: 15px;
   object-fit: cover;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -890,7 +890,7 @@ header {
   width: 100%;
   height: 120px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -1839,8 +1839,8 @@ footer {
 
 .song-jacket-container-v2 {
   width: 180px;
-  height: 120px;
-  border-radius: 8px;
+  height: 180px;
+  border-radius: 12px;
   overflow: hidden;
   margin-bottom: 2px;
   position: relative;
@@ -1849,10 +1849,11 @@ footer {
 }
 
 .song-jacket-v2 {
-  object-fit: cover;
   width: 100%;
-  height: 120px;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
 
 .diamond-badge {
@@ -1932,8 +1933,8 @@ footer {
     max-width: 180px;
   }
   .song-jacket-container-v2 {
-    width: 160px;
-    height: 106px;
+    width: 100px;
+    height: 100px;
   }
 }
 @media (max-width: 900px) {
@@ -1946,8 +1947,8 @@ footer {
     max-width: 150px;
   }
   .song-jacket-container-v2 {
-    width: 130px;
-    height: 86px;
+    width: 80px;
+    height: 80px;
   }
 }
 @media (max-width: 600px) {
@@ -1960,8 +1961,8 @@ footer {
     max-width: 120px;
   }
   .song-jacket-container-v2 {
-    width: 100px;
-    height: 66px;
+    width: 60px;
+    height: 60px;
   }
 }
 

@@ -435,12 +435,14 @@ function App() {  const [allSongs, setAllSongs] = useState([])
         />
           <Results b30Data={b30Data} playerName={playerName} setPlayerName={setPlayerName} />
             {/* Analytics Section */}
+          {/*
           <Analytics 
             userScores={userScores}
             allSongs={allSongs}
             b30Data={b30Data}
             packData={packData}
           />
+          */}
       </main>
       
       {/* Export/Import Modal */}
