@@ -58,11 +58,25 @@ const Results = ({ b30Data }) => {
   const exportB30AsImage = async () => {
     const element = document.getElementById('b30-export')
     if (!element) return
-    const canvas = await html2canvas(element, { backgroundColor: null })
+    // Copy the body's background style to the export area
+    const bodyStyle = window.getComputedStyle(document.body)
+    element.style.background = bodyStyle.background
+    element.style.backgroundImage = bodyStyle.backgroundImage
+    element.style.backgroundSize = bodyStyle.backgroundSize
+    element.style.backgroundPosition = bodyStyle.backgroundPosition
+    element.style.backgroundAttachment = bodyStyle.backgroundAttachment
+    // Use a higher scale for better quality
+    const canvas = await html2canvas(element, { backgroundColor: null, scale: window.devicePixelRatio })
     const link = document.createElement('a')
     link.download = 'b30.png'
     link.href = canvas.toDataURL('image/png')
     link.click()
+    // Optionally, reset the export area's background after export
+    element.style.background = ''
+    element.style.backgroundImage = ''
+    element.style.backgroundSize = ''
+    element.style.backgroundPosition = ''
+    element.style.backgroundAttachment = ''
   }
 
   const getGrade = (score) => {
