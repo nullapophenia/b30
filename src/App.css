@@ -18,49 +18,49 @@ body {
 
 /* Arcaea-style backgrounds */
 .background-1 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg1.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 .background-2 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg2.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg2.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 .background-3 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg3.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg3.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 .background-4 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg4.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg4.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 .background-5 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg5.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg5.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 .background-6 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg6.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg6.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 .background-7 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg7.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg7.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 .background-8 { 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./backgrounds/bg8.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/backgrounds/bg8.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
